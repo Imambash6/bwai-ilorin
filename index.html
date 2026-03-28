@@ -172,7 +172,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900">Daniel Olowoniyi</h3>
                     <p class="text-blue-600 font-medium mb-4">Product Showcase</p>
-                    <p class="text-gray-500 text-sm mb-6 font-mono">@DanielOlowoniyi</p>
+                    <p class="text-gray-500 text-sm mb-6 font-mono">@iamdanztee</p>
                     <a href="#" class="inline-flex items-center text-sm font-bold text-gray-900 group-hover:text-blue-600">
                         View Profile 
                         <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
@@ -195,7 +195,8 @@
                     <h2 class="text-2xl font-bold text-gray-900">Share Your Build</h2>
                 </div>
                 
-                <p class="text-gray-600 mb-8">What did you create today? Describe your AI project in one sentence and we'll handle the rest.</p>
+                <p class="text-gray-600 mb-4">What did you create today? Describe your AI project in one sentence and we'll handle the rest.</p>
+                <p class="text-sm text-blue-600 font-medium mb-8">💡 Note: Edit your tweet to only tag the relevant speaker you want to tweet about, or if you like tweet everything + add a screenshot of your build!</p>
                 
                 <textarea 
                     id="userTweet" 
@@ -315,20 +316,21 @@
     </footer>
 
     <script>
-        const speakers = "@itzareous @MilekeKolawole @AhmzyJazzy @ayololuwa @DanielOlowoniyi";
-        const hashtags = "#BuildWithAI #GDGIlorin #BuildInPublic";
+        const speakers = "@itzareous @MilekeKolawole @AhmzyJazzy @ayololuwa @iamdanztee";
+        const tags = "@gdgilorin @googledevs @geektutor";
+        const hashtags = "#buildwithaiilorin #GDGIlorin";
 
         function tweetCustomBuild() {
             const userMsg = document.getElementById('userTweet').value || "building something amazing";
-            const fullTweet = `I just built ${userMsg} at #BuildWithAI with ${speakers} 🔥 ${hashtags}`;
+            const fullTweet = `I just built ${userMsg} at #BuildWithAI with ${speakers} ${tags} 🔥 ${hashtags}`;
             window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(fullTweet)}`, '_blank');
         }
 
         function tweetFixed(id) {
             let text = "";
-            if (id === 1) text = `Learning how to build with AI today at #BuildWithAI Ilorin 🚀 Thanks ${speakers} for the insights!`;
-            if (id === 2) text = `Builders in Ilorin are cooking with AI today 🤖🔥 #BuildWithAI #GDGIlorin #Gemini`;
-            if (id === 3) text = `Just shipped my first AI project today at #BuildWithAI! Big thanks to our speakers and @GDGIlorin`;
+            if (id === 1) text = `Learning how to build with AI today at #BuildWithAI Ilorin 🚀 Thanks ${speakers} ${tags} for the insights! ${hashtags}`;
+            if (id === 2) text = `Builders in Ilorin are cooking with AI today 🤖🔥 ${tags} ${hashtags} #Gemini`;
+            if (id === 3) text = `Just shipped my first AI project today at #BuildWithAI! Big thanks to our speakers ${speakers} and ${tags} ${hashtags}`;
             
             window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
         }
